@@ -29,12 +29,12 @@ func ListTaskHandler(discord *discordgo.Session, message *discordgo.MessageCreat
 	}
 	result := ""
 	for _, task := range tasks {
-		a := fmt.Sprintf("%s - Created in %v\n",task.Name,task.Created.Format("01/02/2006"))
+		a := fmt.Sprintf("%-25v  Created in %v\n",task.Name,task.Created.Format("01/02/2006"))
 		result = result + a
 	}
 	response := discordgo.MessageEmbed{
 		Title:       "Tasks",
-		Description: "**These are your tasks:**\n" + result,
+		Description: "**These are your tasks:**```\n" + result + "```",
 		Color:       0x65f442,
 	}
 	_, _ = discord.ChannelMessageSendEmbed(message.ChannelID, &response)
