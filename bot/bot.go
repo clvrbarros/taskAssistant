@@ -5,7 +5,7 @@ import (
 )
 
 func Start() {
-	const token = "NjExMjM2NDQ1MzMxNTIxNTM2.XVQ4ag.xDlP8ovdgRpfYNaOTzRxAqxXGos"
+	const token = "TOKEN"
 	discord, err := discordgo.New("Bot " + token)
 	errCheck("Error opening connection to discord", err)
 	_, err = discord.User("@me")
